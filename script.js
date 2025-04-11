@@ -41,39 +41,3 @@ function getWeather() {
       document.getElementById('forecastContainer').innerHTML = forecastHTML;
     });
 }
-
-
-        resultDiv.innerHTML = `
-            <strong>${city.toUpperCase()}</strong><br>
-            ${desc}<br>
-            🌡️ ${temp} °C<br>
-            💨 Vento: ${wind} m/s<br>
-            💧 Umidade: ${humidity}%
-
-              // Previsão dos próximos dias
-  fetch(forecastUrl)
-    .then(response => response.json())
-    .then(data => {
-      let forecastHTML = '';
-      const middayForecasts = data.list.filter(item => item.dt_txt.includes('12:00:00'));
-
-      middayForecasts.forEach(item => {
-        const date = new Date(item.dt_txt);
-        forecastHTML += `
-          <div style="border:1px solid #ccc; padding:10px; margin:10px 0;">
-            <strong>${date.toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' })}</strong><br>
-            ${item.weather[0].description}<br>
-            🌡️ ${item.main.temp}°C<br>
-            <img src="https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png">
-          </div>
-        `;
-      });
-
-      document.getElementById('forecastContainer').innerHTML = forecastHTML;
-    });
-}
-        `;
-    } catch (error) {
-        resultDiv.innerHTML = "Erro ao buscar dados do clima.";
-    }
-}
