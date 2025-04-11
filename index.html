@@ -1,21 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>ObservaClima</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>ObservaClima</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>ObservaClima</h1>
-        <p>Confira a previsão do tempo por cidade</p>
-        <input type="text" id="cityInput" placeholder="Digite o nome da cidade">
-        <button onclick="getWeather()">Buscar</button>
-        <div id="weatherResult"></div>
-        <h2>Próximos dias</h2>
-<div id="forecastContainer"></div>
-    </div>
-    <script src="script.js"></script>
+  <div class="container">
+    <h1>ObservaClima</h1>
+    <p>Confira a previsão do tempo por cidade</p>
+    <input type="text" id="cityInput" placeholder="Digite o nome da cidade">
+    <button onclick="getWeather()">Buscar</button>
+    
+    <div id="weatherResult"></div> <!-- Clima atual -->
+    <div id="forecastContainer"></div> <!-- Previsão dos próximos dias -->
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
